@@ -36,6 +36,7 @@ Example
 
 rake model_diagram:generate
 Generates diagrammatic representation of the model relationship present in your rails app.
+The model_relationship.dot and model_relationship.png files will be generated at the application root folder.
 
 
 Copyright (c) 2010 [name of plugin creator], released under the MIT license
