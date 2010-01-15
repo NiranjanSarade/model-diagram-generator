@@ -1,1 +1,1 @@
-require 'model_diagram'
+

@@ -17,7 +17,7 @@ and has_and_belongs_to_many.
 
 There is a tool called 'Gvedit' (graphviz-2.20.2.exe) (http://www.graphviz.org/) which generates
 Directed and Undirected graphs. It accepts a dot file in specific format and it generates directed 
-graphs free of cost ! :-) We can use the reflections for findling all associations of a Model and feed in
+graphs free of cost ! :-) We can use the reflections for finding all associations of a Model and feed in
 to this Gvedit tool to generate a relationship diagram.
 
 Whenever a new team member enters to any enhancement project, from technical perspective, he tries 
@@ -38,5 +38,19 @@ rake model_diagram:generate
 Generates diagrammatic representation of the model relationship present in your rails app.
 The model_relationship.dot and model_relationship.png files will be generated at the application root folder.
 
+Consider the following scenario :-
+
+class Person < ActiveRecord::Base
+  	belongs_to :father, :class_name=>'Person'
+ 	belongs_to :mother, :class_name=>'Person'
+end
+
+In the above case, only one node will be generated for Person with "belongs_to mother" and "belongs_to father" edges connecting it.
+
+
+Special Thanks
+=======
+Thanks to Alex Rothenberg (http://www.alexrothenberg.com/) who suggested some good 
+changes/thoughts with respect to this plugin. 
 
 Copyright (c) 2010 [name of plugin creator], released under the MIT license
